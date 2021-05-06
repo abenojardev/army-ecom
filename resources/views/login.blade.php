@@ -32,7 +32,7 @@
       @if(session('error'))
         <p class="text-danger">{{ session('error') }}</p>
       @endif
-      
+
       <div class="form-label-group">
         <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputEmail">Email address</label>
@@ -56,7 +56,7 @@
         padding-right:5% !important;
       }
       body{
-        background-image: url('https://media2.giphy.com/media/Jw4SQcBYaTJiPybmsx/giphy.gif?cid=ecf05e47i6lngpy9l7itwdfbg32vy7pm7qdirobclkdnzikw&rid=giphy.gif&ct=g');
+        background-image: url('bg.gif');
         background-repeat:no-repeat;
         background-size: cover;
       }

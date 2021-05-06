@@ -20,9 +20,13 @@ class AuthController extends Controller
     }
 
     public function verify()
-    {
+    { 
         if(Auth::attempt($this->request->except('_token'))) {
+            if(Auth::user()->account_type == 'admin'){
+                return Redirect::route('cms.products');
+            }
 
+            return Redirect::route('home');
         }
 
         return back()->withError('Account not found!');
