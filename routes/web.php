@@ -7,6 +7,10 @@ Route::get('/login',[
     'index'
 ])->name('login');
 
+Route::post('/login/verify',[
+    App\Http\Controllers\AuthController::class,
+    'verify'
+])->name('login.verify');
 
 Route::group(['middleware' => 'user'], function(){
     Route::get('/',[
