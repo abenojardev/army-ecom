@@ -8,12 +8,15 @@ Route::get('/login',[
 ])->name('login');
 
 
-Route::get('/',[
-    App\Http\Controllers\Website\ProductController::class,
-    'home'
-])->name('home');
+Route::group(['middleware' => 'user'], function(){
+    Route::get('/',[
+        App\Http\Controllers\Website\ProductController::class,
+        'home'
+    ])->middleware('customer')->name('home');
 
-Route::get('/cms/products',[
-    App\Http\Controllers\CMS\ProductController::class,
-    'index'
-])->name('cms.products');
+
+    Route::get('/cms/products',[
+        App\Http\Controllers\CMS\ProductController::class,
+        'index'
+    ])->middleware('admin')->name('cms.products');
+});

@@ -19,6 +19,9 @@ class CreateProductTable extends Migration
             $table->string('category');
             $table->double('price'); 
             $table->longText('details')->nullable(); 
+            $table->longText('image1')->nullable(); 
+            $table->longText('image2')->nullable(); 
+            $table->longText('image3')->nullable(); 
             $table->timestamps();
         });
     }
