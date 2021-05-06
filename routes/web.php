@@ -7,6 +7,11 @@ Route::get('/login',[
     'index'
 ])->middleware('guest')->name('login');
 
+Route::get('/logout',[
+    App\Http\Controllers\AuthController::class,
+    'logout'
+])->name('logout');
+
 Route::post('/login/verify',[
     App\Http\Controllers\AuthController::class,
     'verify'

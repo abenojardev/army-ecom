@@ -31,4 +31,11 @@ class AuthController extends Controller
 
         return back()->withError('Account not found!');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return Redirect::route('login');
+    }
 }
