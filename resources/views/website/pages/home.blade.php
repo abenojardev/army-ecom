@@ -40,9 +40,9 @@
                                     ₱   {{ $x->price }}
                                 </small> 
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-primary">
+                                    <a href="{{ URL::route('cart.add', $x->id) }}" class="btn btn-sm btn-primary">
                                         <i class="bi bi-cart"></i> Add to cart
-                                    </button> 
+                                    </a> 
                                 </div>
                             </div>
                         </div>

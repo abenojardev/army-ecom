@@ -48,4 +48,11 @@ Route::group(['middleware' => 'user'], function(){
         App\Http\Controllers\CMS\ProductController::class,
         'create'
     ])->middleware('admin')->name('cms.product.create');  
+
+
+
+    Route::get('/cart/add/{id}',[
+        App\Http\Controllers\Website\CartController::class,
+        'add'
+    ])->middleware('customer')->name('cart.add');  
 });

@@ -23,10 +23,10 @@ class ProductController extends Controller
 
         if($this->request->has('q')){
             $q = $this->request->q;
-            $data = $this->product->where('name','like','%'.$q.'%')
-                                  ->orWhere('category','like','%'.$q.'%')
-                                  ->orWhere('price','like','%'.$q.'%')
-                                  ->orWhere('details','like','%'.$q.'%')
+            $data = $this->product->where('name','LIKE','%'.$q.'%')
+                                  ->orWhere('category','LIKE','%'.$q.'%')
+                                  ->orWhere('price','LIKE','%'.$q.'%')
+                                  ->orWhere('details','LIKE','%'.$q.'%')
                                   ->get();
         }
 
