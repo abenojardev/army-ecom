@@ -9,7 +9,7 @@
 
         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-                <a href="#" class="nav-link text-secondary">
+                <a href="{{ URL::route('cms.products') }}" class="nav-link text-secondary">
                     <i class="bi d-block mx-auto mb-1 bi bi-cart"></i>
                     Products
                 </a>

@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Login | Farm Fresh</title>
+    <title>Sign Up | Farm Fresh</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
 
@@ -20,18 +20,32 @@
   </head>
 
   <body>
-    <form class="form-signin" method="post" action="{{ URL::route('login.verify') }}">
+    <form class="form-signin" method="post" action="{{ URL::route('signup.verify') }}">
       @csrf 
 
       <div class="text-center mb-4">
         <img class="mb-4" src="https://seeklogo.com/images/F/farm-fresh-logo-784D6B0BEF-seeklogo.com.png" alt="" width="100%">
-        <h1 class="h3 mb-3 font-weight-normal">Log In to order</h1> 
+        <h1 class="h3 mb-3 font-weight-normal">Sign Up to order</h1> 
       </div>
 
       
       @if(session('error'))
         <p class="text-danger">{{ session('error') }}</p>
       @endif
+
+      <div class="form-label-group">
+        <input name="name" type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputEmail">Name</label>
+      </div>
+      <div class="form-label-group">
+        <input name="contact" type="tel" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputEmail">Contact</label>
+      </div>
+
+      <div class="form-label-group">
+        <input name="address" type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputEmail">Address</label>
+      </div>
 
       <div class="form-label-group">
         <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -42,10 +56,10 @@
         <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <label for="inputPassword">Password</label>
       </div> 
-      
-      <a href="{{ URL::route('signup') }}">Create an account</a><br>
-      
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+      <a href="{{ URL::route('login') }}">Log In to your account</a><br>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
       <p class="mt-5 mb-3 text-muted text-center">&copy; 2021-2022</p>
     </form>
 

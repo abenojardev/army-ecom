@@ -18,7 +18,9 @@ class ProductController extends Controller
     }
 
     public function home()
-    {
-        return view('website.pages.home');
+    { 
+        return view('website.pages.home')->with([
+            'data' => $this->product->all()
+        ]);
     }
 }

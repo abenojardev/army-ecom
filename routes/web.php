@@ -7,6 +7,11 @@ Route::get('/login',[
     'index'
 ])->middleware('guest')->name('login');
 
+Route::get('/signup',[
+    App\Http\Controllers\AuthController::class,
+    'signup'
+])->middleware('guest')->name('signup');
+
 Route::get('/logout',[
     App\Http\Controllers\AuthController::class,
     'logout'
@@ -16,6 +21,11 @@ Route::post('/login/verify',[
     App\Http\Controllers\AuthController::class,
     'verify'
 ])->name('login.verify');
+
+Route::post('/signup/verify',[
+    App\Http\Controllers\AuthController::class,
+    'signupVerify'
+])->name('signup.verify');
 
 Route::group(['middleware' => 'user'], function(){
     Route::get('/',[
@@ -28,4 +38,14 @@ Route::group(['middleware' => 'user'], function(){
         App\Http\Controllers\CMS\ProductController::class,
         'index'
     ])->middleware('admin')->name('cms.products');
+
+    Route::get('/cms/products/add',[
+        App\Http\Controllers\CMS\ProductController::class,
+        'add'
+    ])->middleware('admin')->name('cms.product.add');  
+
+    Route::post('/cms/products/create',[
+        App\Http\Controllers\CMS\ProductController::class,
+        'create'
+    ])->middleware('admin')->name('cms.product.create');  
 });

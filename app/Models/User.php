@@ -17,9 +17,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'account_type',
         'address',
         'contact',
+        'account_type',
         'created_at',
         'updated_at'
     ];
