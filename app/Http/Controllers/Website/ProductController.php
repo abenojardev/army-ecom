@@ -17,7 +17,7 @@ class ProductController extends Controller
         $this->product = $product;
     }
 
-    public function home()lear
+    public function home()
     { 
         $data = $this->product->all();
 
