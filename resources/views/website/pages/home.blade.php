@@ -1,11 +1,10 @@
 @extends('website.layouts.index')
 @section('title', 'Homepage')
-@section('body')
-    <div class="py-5">
+@section('body') 
         <div class="container"> 
           <div class="row"> 
             @foreach($data as $x)
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card mb-4 box-shadow"> 
                         <div id="carouselExampleControls_{{ $x->id }}" class="carousel slide"">
                             <div class="carousel-inner">

@@ -19,8 +19,19 @@ class ProductController extends Controller
 
     public function home()
     { 
+        $data = $this->product->all();
+
+        if($this->request->has('q')){
+            $q = $this->request->q;
+            $data = $this->product->where('name','like','%'.$q.'%')
+                                  ->orWhere('category','like','%'.$q.'%')
+                                  ->orWhere('price','like','%'.$q.'%')
+                                  ->orWhere('details','like','%'.$q.'%')
+                                  ->get();
+        }
+
         return view('website.pages.home')->with([
-            'data' => $this->product->all()
+            'data' => $data
         ]);
     }
 }

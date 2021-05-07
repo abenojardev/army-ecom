@@ -10,7 +10,7 @@
     @yield('extraCss')
 </head> 
 <body> 
-    @include('website.components.header')
+    @include('website.components.header') 
     @yield('body')
     @yield('extraJs')
 
